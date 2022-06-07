@@ -44,12 +44,14 @@ transition_table[['q5', 'g']] = 'q6'
 transition_table[['q6', 'g']] = 'q7'
 transition_table[['q7', 'o']] = 'q8'
 
-// transition table for: mobil
+// transition table for: dahar
 transition_table[['q1', 'd']] = 'q10'
 transition_table[['q10', 'a']] = 'q11'
 transition_table[['q11', 'h']] = 'q12'
 transition_table[['q12', 'a']] = 'q13'
 transition_table[['q13', 'r']] = 'q8'
+
+
 
 
 submit.onclick = (event) => {
