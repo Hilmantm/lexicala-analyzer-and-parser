@@ -12,26 +12,28 @@
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Lexical Analyzer</h5>
-            <h6 class="card-subtitle text-muted">Bahasa Sunda</h6>
-            <p class="card-text">Input berupa bahasa sunda dengan kriteria 3 kata seperti subjek, predikat, dan objek</p>
-            <div class="mb-3">
-                <label for="input_kalimat" class="form-label">Input kalimat</label>
-                <input type="text" class="form-control" id="input_kalimat" placeholder="ex: abdi najong bola">
-            </div>
-            <button type="button" id="btn-analyze" class="btn btn-primary">
-                Analyze
-                <div class="spinner-border text-light spinner-border-sm ms-2" id="loading" style="display: none" role="status">
-                    <span class="visually-hidden">Loading...</span>
+            <form id="form">
+                <h5 class="card-title">Lexical Analyzer</h5>
+                <h6 class="card-subtitle text-muted">Bahasa Sunda</h6>
+                <p class="card-text">Input berupa bahasa sunda dengan kriteria 3 kata seperti subjek, predikat, dan objek</p>
+                <div class="mb-3">
+                    <label for="input_kalimat" class="form-label">Input kalimat</label>
+                    <input type="text" class="form-control" id="input_kalimat" required placeholder="ex: abdi nganggo mobil">
                 </div>
-            </button>
-            <div class="mb-3 mt-3">
-                <label for="result" class="form-label">Hasil</label>
-                <input type="text" class="form-control" disabled id="result">
-            </div>
-            <button type="button" id="btn-clear" class="btn btn-danger">
-                Clear
-            </button>
+                <button type="submit" id="btn-analyze" class="btn btn-primary">
+                    Analyze
+                    <div class="spinner-border text-light spinner-border-sm ms-2" id="loading" style="display: none" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </button>
+                <div class="mb-3 mt-3">
+                    <label for="result" class="form-label">Hasil</label>
+                    <input type="text" class="form-control" disabled id="result">
+                </div>
+                <button type="button" id="btn-clear" class="btn btn-danger">
+                    Clear
+                </button>
+            </form>
         </div>
     </div>
 

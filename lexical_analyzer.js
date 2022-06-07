@@ -1,8 +1,8 @@
 var inputKalimat = document.getElementById('input_kalimat');
-var submit = document.getElementById('btn-analyze');
 var hasil = document.getElementById('result');
 var clear = document.getElementById('btn-clear');
 var loading = document.getElementById('loading');
+var form = document.getElementById('form')
 
 var transition_table = {};
 var state_list = [];
@@ -133,7 +133,9 @@ transition_table[['q46', 't']] = 'q44'
 
 
 
-submit.onclick = (event) => {
+form.onsubmit = (event) => {
+
+    event.preventDefault()
 
     loading.style = 'display: inline-block'
 
