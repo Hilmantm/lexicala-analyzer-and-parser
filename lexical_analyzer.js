@@ -25,7 +25,17 @@ for(var state in state_list) {
 
 transition_table['q1', ' '] = 'q1'
 
+// transition for new token
+transition_table[['q9', 'n']] = 'q1'
+transition_table[['q9', 'd']] = 'q10'
 
+// transition for final state
+transition_table[['q8', ' ']] = 'q9'
+transition_table[['q8', '#']] = 'accept'
+transition_table[['q9', ' ']] = 'q9'
+transition_table[['q9', '#']] = 'accept'
+
+// transition table for: nganggo
 transition_table[['q1', 'n']] = 'q2'
 transition_table[['q2', 'g']] = 'q3'
 transition_table[['q3', 'a']] = 'q4'
@@ -33,10 +43,14 @@ transition_table[['q4', 'n']] = 'q5'
 transition_table[['q5', 'g']] = 'q6'
 transition_table[['q6', 'g']] = 'q7'
 transition_table[['q7', 'o']] = 'q8'
-transition_table[['q8', ' ']] = 'q9'
-transition_table[['q8', '#']] = 'accept'
-transition_table[['q9', ' ']] = 'q9'
-transition_table[['q9', '#']] = 'accept'
+
+// transition table for: mobil
+transition_table[['q1', 'd']] = 'q10'
+transition_table[['q10', 'a']] = 'q11'
+transition_table[['q11', 'h']] = 'q12'
+transition_table[['q12', 'a']] = 'q13'
+transition_table[['q13', 'r']] = 'q8'
+
 
 submit.onclick = (event) => {
     // lexical analysis
@@ -44,13 +58,13 @@ submit.onclick = (event) => {
     var state = 'q1'
     var currentToken = ''
     var inputChar = inputKalimat.value + '#'
-    while (state != 'accept' || state != 'q8' || state != 'q9') {
+    console.log(inputChar)
+    while (state != 'accept') {
         var currentChar = inputChar.charAt(indexChar)
         currentToken += currentChar
         state = transition_table[[state, currentChar]]
-        if(state == 'q8') {
+        if(state == 'accept') {
             console.log("valid gais")
-            console.log(state)
             currentToken = ''
         }
         if(state == 'error') {
