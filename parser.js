@@ -4,17 +4,33 @@ var clearParser = document.getElementById('btn-clear-parser');
 var loadingParser = document.getElementById('loading-parser');
 var formParser = document.getElementById('form-parser');
 
-var nonTerminals = ['S', 'NN', 'VB'];
+var nonTerminals = ['I', 'S', 'NN', 'VB'];
 var terminals = ['abdi', 'urang', 'indung', 'emang', 'mobil', 'ali', 
                 'roti', 'kaen', 'kecap', 'bawang', 'tumpak', 
                 'nganggo', 'dahar', 'masak'];
 
 var parse_table = [];
 
-parse_table[['S', 'abdi']] = ['NN', 'VB', 'NN']
-parse_table[['S', 'urang']] = ['NN', 'VB', 'NN']
-parse_table[['S', 'indung']] = ['NN', 'VB', 'NN']
-parse_table[['S', 'emang']] = ['NN', 'VB', 'NN']
+parse_table[['I', 'abdi']] = ['S', 'VB', 'NN']
+parse_table[['I', 'urang']] = ['S', 'VB', 'NN']
+parse_table[['I', 'indung']] = ['S', 'VB', 'NN']
+parse_table[['I', 'emang']] = ['S', 'VB', 'NN']
+parse_table[['I', 'mobil']] = ['error']
+parse_table[['I', 'ali']] = ['error']
+parse_table[['I', 'roti']] = ['error']
+parse_table[['I', 'kaen']] = ['error']
+parse_table[['I', 'kecap']] = ['error']
+parse_table[['I', 'bawang']] = ['error']
+parse_table[['I', 'tumpak']] = ['error']
+parse_table[['I', 'nganggo']] = ['error']
+parse_table[['I', 'dahar']] = ['error']
+parse_table[['I', 'masak']] = ['error']
+parse_table[['I', 'EOS']] = ['error']
+
+parse_table[['S', 'abdi']] = ['abdi']
+parse_table[['S', 'urang']] = ['urang']
+parse_table[['S', 'indung']] = ['indung']
+parse_table[['S', 'emang']] = ['emang']
 parse_table[['S', 'mobil']] = ['error']
 parse_table[['S', 'ali']] = ['error']
 parse_table[['S', 'roti']] = ['error']
@@ -27,10 +43,10 @@ parse_table[['S', 'dahar']] = ['error']
 parse_table[['S', 'masak']] = ['error']
 parse_table[['S', 'EOS']] = ['error']
 
-parse_table[['NN', 'abdi']] = ['abdi']
-parse_table[['NN', 'urang']] = ['urang']
-parse_table[['NN', 'indung']] = ['indung']
-parse_table[['NN', 'emang']] = ['emang']
+parse_table[['NN', 'abdi']] = ['error']
+parse_table[['NN', 'urang']] = ['error']
+parse_table[['NN', 'indung']] = ['error']
+parse_table[['NN', 'emang']] = ['error']
 parse_table[['NN', 'mobil']] = ['mobil']
 parse_table[['NN', 'ali']] = ['ali']
 parse_table[['NN', 'roti']] = ['roti']
@@ -70,7 +86,7 @@ var processParser = (tokens, sentences) => {
     // stack initialization
     var stack = [];
     stack.push('#');
-    stack.push('S');
+    stack.push('I');
 
     tokens.push('EOS')
     console.log('tokens: ', tokens)
