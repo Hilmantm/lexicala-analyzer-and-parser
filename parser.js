@@ -82,6 +82,11 @@ formParser.onsubmit = (event) => {
     processParser(inputData.split(' '), inputData)
 } 
 
+clearParser.onclick = (event) => {
+    inputKalimatParser.value = ""
+    hasilParser.value = ""
+}
+
 var processParser = (tokens, sentences) => {
     // stack initialization
     var stack = [];
@@ -134,7 +139,7 @@ var processParser = (tokens, sentences) => {
         console.log('Input string ', sentences, 'diterima sesuai grammar');
         hasilParser.value = `Input string ${sentences} diterima sesuai grammar`;
     } else {
-        console.log('error, tidak diterima karena tidak sesuai grammar');
+        console.log('Error, tidak diterima karena tidak sesuai grammar');
         hasilParser.value = 'error, tidak diterima karena tidak sesuai grammar';
     }
 }
