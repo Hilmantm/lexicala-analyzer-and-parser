@@ -16,10 +16,10 @@
             <form id="form">
                 <h5 class="card-title">Lexical Analyzer</h5>
                 <h6 class="card-subtitle text-muted">Bahasa Sunda</h6>
-                <p class="card-text">Input berupa bahasa sunda dengan kriteria 3 kata seperti subjek, predikat, dan objek</p>
+                <p class="card-text">Input berupa bahasa sunda untuk dicek apakah valid atau error</p>
                 <div class="mb-3">
                     <label for="input_kalimat" class="form-label">Input kalimat</label>
-                    <input type="text" class="form-control" id="input_kalimat" required placeholder="ex: abdi nganggo mobil">
+                    <input type="text" class="form-control" id="input_kalimat" required placeholder="ex: abdi, mobil, nganggo, bawang" autocomplete="off">
                 </div>
                 <button type="submit" id="btn-analyze" class="btn btn-primary">
                     Analyze
@@ -46,7 +46,7 @@
                 <p class="card-text">Input berupa bahasa sunda dengan ketentuan subjek + predikat + objek</p>
                 <div class="mb-3">
                     <label for="input_kalimat" class="form-label">Input kalimat</label>
-                    <input type="text" class="form-control" id="input_kalimat_parser" required placeholder="ex: abdi nganggo mobil">
+                    <input type="text" class="form-control" id="input_kalimat_parser" required placeholder="ex: abdi nganggo mobil" autocomplete="off">
                 </div>
                 <button type="submit" id="btn-analyze-parser" class="btn btn-primary">
                     Analyze
